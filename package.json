@@ -27,7 +27,7 @@
     "getport": "^0.1.0"
   },
   "devDependencies": {
-    "ghd": "0.0.4",
+    "ghd": "0.0.5",
     "mkdirp": "^0.5.1",
     "tar": "^3.1.7"
   }
