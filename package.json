@@ -8,6 +8,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "preinstall": "scripts/preinstall.js",
     "prepublishOnly": "scripts/prepublishOnly.js"
   },
   "repository": {
@@ -26,7 +27,8 @@
     "getport": "^0.1.0"
   },
   "devDependencies": {
-    "ghd": "0.0.3",
-    "mkdirp": "^0.5.1"
+    "ghd": "0.0.4",
+    "mkdirp": "^0.5.1",
+    "tar": "^3.1.7"
   }
 }

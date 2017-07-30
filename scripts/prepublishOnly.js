@@ -1,22 +1,28 @@
 #!/usr/bin/env node
 
 const path = require('path');
+
 const mkdirp = require('mkdirp');
 const ghd = require('ghd');
 
 const dirname = path.join(__dirname, '..', 'bin');
+const username = 'modulesio';
+const repo = 'chromium-zeo';
+const hash = '4730b34dad34142a9971634e58f87bc3a612c7ac';
 const files = [
   {
-    username: 'modulesio',
-    repo: 'chromium-zeo',
-    hash: '4730b34dad34142a9971634e58f87bc3a612c7ac',
+    username,
+    repo,
+    hash,
     path: '/linux.tar.gz',
+    file: path.join(dirname, 'linux.tar.gz'),
   },
   {
-    username: 'modulesio',
-    repo: 'chromium-zeo',
-    hash: '4730b34dad34142a9971634e58f87bc3a612c7ac',
+    username,
+    repo,
+    hash,
     path: '/windows.tar.gz',
+    file: path.join(dirname, 'windows.tar.gz'),
   },
 ];
 
@@ -24,20 +30,7 @@ console.log('downloading binaries...');
 
 mkdirp(dirname, err => {
   if (!err) {
-    Promise.all(files.map(({
-      username,
-      repo,
-      hash,
-      path,
-    }) => 
-      ghd({
-        username,
-        repo,
-        hash,
-        path,
-        dirname,
-      })
-    ))
+    Promise.all(files.map(file => ghd(file)))
       .then(() => {
         console.log('downloaded binaries');
 
