@@ -7,7 +7,8 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "scripts/prepublishOnly.js"
   },
   "repository": {
     "type": "git",
@@ -22,7 +23,10 @@
   "dependencies": {
     "autows": "0.0.7",
     "chrome-remote-interface": "^0.24.3",
-    "getport": "^0.1.0",
-    "ghd": "0.0.1"
+    "getport": "^0.1.0"
+  },
+  "devDependencies": {
+    "ghd": "0.0.3",
+    "mkdirp": "^0.5.1"
   }
 }
