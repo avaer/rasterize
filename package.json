@@ -1,0 +1,28 @@
+{
+  "name": "rasterize",
+  "version": "0.0.1",
+  "description": "Rasterize HTML to image data asynchronously in the browser",
+  "main": "backend.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/modulesio/rasterize.git"
+  },
+  "author": "Avaer Kazmer <a@modules.io>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/modulesio/rasterize/issues"
+  },
+  "homepage": "https://github.com/modulesio/rasterize#readme",
+  "dependencies": {
+    "autows": "0.0.7",
+    "chrome-remote-interface": "^0.24.3",
+    "getport": "^0.1.0",
+    "ghd": "0.0.1"
+  }
+}
