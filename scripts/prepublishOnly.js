@@ -2,6 +2,7 @@
 
 const path = require('path');
 
+const rimraf = require('rimraf');
 const mkdirp = require('mkdirp');
 const ghd = require('ghd');
 
@@ -28,19 +29,24 @@ const files = [
 
 console.log('downloading binaries...');
 
-mkdirp(dirname, err => {
+rimraf(dirname, err => {
   if (!err) {
-    Promise.all(files.map(file => ghd(file)))
-      .then(() => {
-        console.log('downloaded binaries');
+    mkdirp(dirname, err => {
+      if (!err) {
+        Promise.all(files.map(file => ghd(file)))
+          .then(() => {
+            console.log('downloaded binaries');
 
-        process.exit(0);
-      })
-      .catch(err => {
-        console.warn(err);
-      });
+            process.exit(0);
+          })
+          .catch(err => {
+            console.warn(err);
+          });
+      } else {
+        throw err;
+      }
+    });
   } else {
     throw err;
   }
 });
-
