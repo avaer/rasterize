@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/modulesio/rasterize#readme",
   "dependencies": {
-    "autows": "0.0.8",
+    "autows": "0.0.9",
     "chrome-remote-interface": "^0.24.3",
     "getport": "^0.1.0"
   }
