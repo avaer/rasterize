@@ -33,9 +33,13 @@ const _recurse = () => {
       .then(({
         imageArrayBuffer,
         anchors,
+        measures,
       }) => {
         c.send(imageArrayBuffer);
-        c.send(JSON.stringify(anchors));
+        c.send(JSON.stringify({
+          anchors,
+          measures,
+        }));
       })
       .catch(err => {
         console.warn(JSON.stringify(err.stack));
