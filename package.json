@@ -1,6 +1,6 @@
 {
   "name": "rasterize",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "Rasterize HTML to image data asynchronously in the browser",
   "main": "backend.js",
   "directories": {
